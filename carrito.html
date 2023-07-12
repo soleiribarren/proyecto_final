@@ -3,51 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Homemade+Apple&family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link href="estilo.css" rel="stylesheet" type="text/css">
     <title>Carrito</title>
 </head>
 <body>
-       <!-- Profe -->
-    <div class="encabezado container-fluid bg-white text-info text-center">
-        <a href="index.html"><img src="/Fotos/Siempre Lista.jpg" class="img-fluid" width="400"></a>
-        <h2>Bienvenidos a mi sitio web!</h2> 
+
+    <header>
+
+        <nav class="navbar navbar-expand-lg bg-body-warning">
+            <div class="container-fluid">
+
+                <div class="logo mt-4">Siempre lista - Blog  
+                    <a class="navbar-brand" href="index.html"></a>
+                </div>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 p-3">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">¿Quien soy?</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Productos y Servicios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Contacto</a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+
+    </header> 
+
+    <main>
 
         <div class="container my-5">
             <div class="row"> 
-            <!-- Espacio -->
-            <div class="col-md-2 text-center">
-
-            </div>
-
-            <div class="col-md-6 text-center">
-                <div class="input-group mb-3">
-                    <input type="text" id = "textoBusqueda" class="form-control" placeholder="¿Qué estas buscando?"><span class="input-group-text" id="btnBusqueda" onclick="filtrarProductos()">Buscar</span>
-                </div>
-            </div>
-
-            <div class="col-md-4 text-end">
-                <a href="carrito.html" id="botonCarrito"></a>
-            </div>
-        
-        </div>
-       
-        
-        </div>
-
-    </div>
     
-    <div class="container my-5">
-        <div id="contenido" class="row"></div>
-    </div>
+                <div class="col-md-4 text-center">
+                    <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none">Inicio</a></li>
+                            <li class="breadcrumb-item active" aria-current="page"><a href="verproducto.html" class="text-decoration-none">Tu articulo</a></li>
+                            <li class="breadcrumb-item active" aria-current="page"><a href="carrito.html" class="text-decoration-none">Total</a></li>
+                        </ol>
+                    </nav>
+                </div>
 
+
+                <div class="col-md-8 text-end">
+                    <a href="carrito.html" id="botonCarrito"></a>
+                </div>
+            
+            </div>
+        </div>
+    
+    
+        <div class="container my-5">
+            <div id="contenido" class="row"></div>
+        </div>
+
+        <div class="container-fluid text-center text-warning bg-primary p-4">Mis viajes</div>
+
+        <div id="fetch" class="row"></div>
+
+    </main>
+
+    <footer>
+
+        <div class="logo">Siempre lista - Blog
+            <a class="navbar-brand" href="index.html"></a>
+        </div>
+
+        <div class="navFooter">
+            <ul>
+                <li class= "navItemFooter"> <a class= "navLinkFooter" href="index.html">¿Quien soy?</a></li>
+                <li class= "navItemFooter"> <a class= "navLinkFooter" href="index.html">Productos y Servicios</a></li>
+                <li class= "navItemFooter"> <a class= "navLinkFooter" href="index.html">Contacto</a></li>
+            </ul>
+        </div> 
+        
+        <div class="redes">
+            <a href="www.youtube.com"><i class="fa-brands fa-youtube"></i></a> 
+            <a href="www.instagram.com"><i class="fa-brands fa-instagram"></i></a>
+            <a href="www.facebook.com"><i class="fa-brands fa-facebook"></i></a>
+            <a href="www.whatsappweb.com"><i class="fa-brands fa-whatsapp"></i></a>
+        </div> 
+
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="./funciones.js"></script>
     <script src="./articulos.js"></script>
     <script src="./carrito.js"></script>
+    <script src="./fetch.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+   
 
 
 </body>

@@ -4,106 +4,185 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Homemade+Apple&family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link href="estilo.css" rel="stylesheet" type="text/css">
     <title>SiempreLista - BLOG!</title>
 </head>
 <body>
 
     <header>
-        <div class="container my-5">
-            <div class="row">
-                <div class="col text-center">
-                    <a href="index.html"><img src="/Fotos/Siempre Lista.jpg" class="img-fluid" width="400"></a> 
-                    <h2 class="text-info">Bienvenidos a mi sitio web!</h2> 
+
+
+        <nav class="navbar navbar-expand-lg bg-body-warning">
+            <div class="container-fluid">
+
+                <div class="logo mt-4">Siempre lista - Blog  
+                    <a class="navbar-brand" href="#espacio"></a>
+                </div>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 p-3">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#espacio">¿Quien soy?</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contenido">Productos y Servicios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#tiktok1">Contacto</a>
+                        </li>
+                    </ul>
+
+                    <form class="d-flex" role="search">
+                    <input type="text" id = "textoBusqueda" class="form-control border-primary" placeholder="¿Qué estas buscando?"><span class="input-group-text bg-primary text-white" id="btnBusqueda" onclick="filtrarProductos()">Buscar</span>
+                    </form>
+
                 </div>
             </div>
-        </div>
-            
-
-            <div class="container my-5">
-                <div class="row">
-                <!-- Espacio -->
-                <div class="col-md-2 text-center">
-
-                </div>
-
-                <div class="col-md-6 text-center">
-                    <div class="input-group mb-3">
-                        <input type="text" id = "textoBusqueda" class="form-control" placeholder="¿Qué estas buscando?"><span class="input-group-text" id="btnBusqueda" onclick="filtrarProductos()">Buscar</span>
-                    </div>
-                </div>
-
-                <div class="col-md-4 text-end">
-                    <a href="carrito.html" id="botonCarrito"></a>
-                </div>
-
-            </div>
-            
-            </div>
-
-        </div>
-<!--         
-        <nav class="navbar navbar-expand-sm bg-warning justify-content-center">
-            <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" href="#">¿Quien soy?</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Productos y Servicios</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Contacto</a>
-            </li>
-            </ul>
         </nav>
-        
-    </header>
-    
+
+
+    </header> 
+
     <main>
 
         <div class="container-fluid">
-            <h3 class="text-center">Carga de carrito provisoria</h3>
-            <div id = "carrito"></div>
-            <button id="comprar">Comprar</button>
-            <div id="contenedorProductos" class="row"></div>
-        </div> -->
+            <div id="espacio" class="bg-warning my-5 p-3 text-center">¿Quien soy?</div>
+        </div>
+            
+        <div class="container" style="width: 60rem">
+            
+            <div class="card border-warning mb-3" style="width: auto">
+
+                <div class="row g-0">
+
+                    <div class= "col-md-3 col-xl-3 col-xxl-3 mt-4">
+                        <img src="/Fotos/welcome.png" class="img-thumbnail rounded-start border-0" alt="Presentacion">
+                    </div>
+
+                    <div class="col-md-9 col-xl-9 col-xxl-9 p-3">
+                        <div class="card-body text-center mt-4 text-bg-warning container-fluid">
+                            <h2 class="titleIndex">Bienvenidos</h2> 
+                            <p class="card-text p-2">Mi nombre es Aylén. Les doy la bienvenida a mi bitacora dedicada a contarles las experiencias de mis viajes a través de fotos y videos. Espero que a través de este BLOG encuentren la información necesaria de cada sitio recorrido y que los empuje a la hermosa aventura de recorrer el mundo. </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>  
+
+
+        <div class="barraSecundaria container-fluid my-5">
+            <div class="row">
+        
+                <div class="col-md-5 text-center bg-white">
+                    <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none"></a></li>
+                        </ol>
+                    </nav>
+                </div>
+
+                <div class="carritoCompras col-md-7 bg-white text-primary">Productos y Servicios
+                    <a href="carrito.html" id="botonCarrito"></a>
+                </div> 
+
+            </div>            
+        </div>
+
+
         <div class="container my-5">
             <div class="row">
+
                 <div class="col-md-2">
                     <h5>Filtro</h5>
 
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="check1" value="Producto" id="flexCheckDefault" onclick="filtrarProductosCheck()">
+                        <input class="form-check-input border-primary" type="checkbox" id="check1" value="Producto" id="flexCheckDefault" onclick="filtrarProductosCheck()">
                         <label class="form-check-label" for="flexCheckDefault">Producto</label>
-                      </div>
+                    </div>
 
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="check2" value="Servicio" id="flexCheckDefault" onclick="filtrarProductosCheck()">
+                    <div class="form-check">
+                        <input class="form-check-input border-primary" type="checkbox" id="check2" value="Servicio" id="flexCheckDefault" onclick="filtrarProductosCheck()">
                         <label class="form-check-label" for="flexCheckDefault">Servicio</label>
-                      </div>
+                    </div>
 
-                      <hr>
+                    <hr class="border-primary">
 
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="check3" value="Argentina" id="flexCheckDefault" onclick="filtrarProductosCheck()">
+                    <div class="form-check">
+                        <input class="form-check-input border-primary" type="checkbox" id="check3" value="Argentina" id="flexCheckDefault" onclick="filtrarProductosCheck()">
                         <label class="form-check-label" for="flexCheckDefault">Argentina</label>
-                      </div>
+                    </div>
 
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="check4" value="Internacional" id="flexCheckDefault" onclick="filtrarProductosCheck()">
+                    <div class="form-check">
+                        <input class="form-check-input border-primary" type="checkbox" id="check4" value="Internacional" id="flexCheckDefault" onclick="filtrarProductosCheck()">
                         <label class="form-check-label" for="flexCheckDefault">Internacional</label>
-                      </div>
-
+                    </div>
                 </div>
+
+
                 <div class="col-md-10">
                     <div id="contenido" class="row"></div>
-                </div>            
+                </div> 
+
             </div>
             
         </div>
- 
+
+        <div class="container-fluid text-center text-warning bg-primary p-4">Seguime en redes sociales</div>
+
+        <div class="container my-5">
+            <div class="row">
+            <div id="tiktok1" class= "col-md-4">
+                <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@siemprelistablog/video/7253947024347876613" data-video-id="7253947024347876613" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="@siemprelistablog" href="https://www.tiktok.com/@siemprelistablog?refer=embed">@siemprelistablog</a> Te animarias a sumarte a esta experiencia? <a title="trekking" target="_blank" href="https://www.tiktok.com/tag/trekking?refer=embed">#trekking</a> <a title="mendoza" target="_blank" href="https://www.tiktok.com/tag/mendoza?refer=embed">#mendoza</a> <a title="vallecitos" target="_blank" href="https://www.tiktok.com/tag/vallecitos?refer=embed">#vallecitos</a> <a title="viajarsola" target="_blank" href="https://www.tiktok.com/tag/viajarsola?refer=embed">#viajarsola</a> <a title="travelgirl" target="_blank" href="https://www.tiktok.com/tag/travelgirl?refer=embed">#travelgirl</a> <a title="amigos" target="_blank" href="https://www.tiktok.com/tag/amigos?refer=embed">#amigos</a> <a title="tendenciatiktok" target="_blank" href="https://www.tiktok.com/tag/tendenciatiktok?refer=embed">#tendenciatiktok</a> <a title="astetic" target="_blank" href="https://www.tiktok.com/tag/astetic?refer=embed">#astetic</a> <a target="_blank" title="♬ sonido original - Rensi Jr" href="https://www.tiktok.com/music/sonido-original-7167885178507987758?refer=embed">♬ sonido original - Rensi Jr</a> </section> </blockquote> <script async src="https://www.tiktok.com/embed.js"></script>
+            </div>
+
+            <div class="tiktok2 col-md-4">
+            <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@siemprelistablog/video/7248986313721007366" data-video-id="7248986313721007366" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="@siemprelistablog" href="https://www.tiktok.com/@siemprelistablog?refer=embed">@siemprelistablog</a> 🗺️ Con quien vendrias a conocer Mendoza?  Apto para fanáticos de la naturaleza, las actividades al aire libre, los amigos, el sol y el vino 🍷 Este video fue realizado camino a realizar trekking exclusivo para mujeres.  Si tenes ganas de viajar sola y conocer gente, es una buena opcion para empezar!  <a title="tendenciatiktok" target="_blank" href="https://www.tiktok.com/tag/tendenciatiktok?refer=embed">#tendenciatiktok</a> <a title="potrerillosmendoza" target="_blank" href="https://www.tiktok.com/tag/potrerillosmendoza?refer=embed">#potrerillosmendoza</a> <a title="amigos" target="_blank" href="https://www.tiktok.com/tag/amigos?refer=embed">#amigos</a> <a title="naturaleza" target="_blank" href="https://www.tiktok.com/tag/naturaleza?refer=embed">#naturaleza</a> <a title="viajandosola" target="_blank" href="https://www.tiktok.com/tag/viajandosola?refer=embed">#viajandosola</a> <a title="womantrekk" target="_blank" href="https://www.tiktok.com/tag/womantrekk?refer=embed">#womantrekk</a> <a title="trekking" target="_blank" href="https://www.tiktok.com/tag/trekking?refer=embed">#trekking</a> <a title="siemprelistablog" target="_blank" href="https://www.tiktok.com/tag/siemprelistablog?refer=embed">#siemprelistablog</a> <a target="_blank" title="♬ New Abundance - Omar Enfedaque" href="https://www.tiktok.com/music/New-Abundance-6935475212096686081?refer=embed">♬ New Abundance - Omar Enfedaque</a> </section> </blockquote> <script async src="https://www.tiktok.com/embed.js"></script>
+            </div>
+            
+            <div class="tiktok2 col-md-4">
+            <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@siemprelistablog/video/7200897911968877829" data-video-id="7200897911968877829" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="@siemprelistablog" href="https://www.tiktok.com/@siemprelistablog?refer=embed">@siemprelistablog</a> Si vas a estar poco tiempo en el norte…estos son los imperdibles de la provincia de Jujuy!  🟡 Salinas Grandes  🟡 El Hornocal   🟡 Humahuaca 🟡 Tilcara 🟡 Purmamarca En esta oportunidad viaje con @KM1 que hicieron que fuera una experiencia inolvidable y se ocuparon de todo! Que estás esperando?? <a title="jujuy" target="_blank" href="https://www.tiktok.com/tag/jujuy?refer=embed">#jujuy</a> <a title="salinasgrandesjujuy" target="_blank" href="https://www.tiktok.com/tag/salinasgrandesjujuy?refer=embed">#salinasgrandesjujuy</a> <a title="viaje" target="_blank" href="https://www.tiktok.com/tag/viaje?refer=embed">#viaje</a> <a title="argentina" target="_blank" href="https://www.tiktok.com/tag/argentina?refer=embed">#argentina</a> <a title="kilometro1" target="_blank" href="https://www.tiktok.com/tag/kilometro1?refer=embed">#kilometro1</a> <a title="vivamosturisteando" target="_blank" href="https://www.tiktok.com/tag/vivamosturisteando?refer=embed">#vivamosturisteando</a> <a target="_blank" title="♬ sonido original - siemprelistablog" href="https://www.tiktok.com/music/sonido-original-7200897935778925318?refer=embed">♬ sonido original - siemprelistablog</a> </section> </blockquote> <script async src="https://www.tiktok.com/embed.js"></script>
+            </div>
+
+        </div>
+        </div>
+
+        <div class="container-fluid text-center text-warning bg-primary p-4">Mis viajes</div>
+
+        <div id="fetch" class="row"></div>
 
     </main>
+    
+    <footer>
+
+        <div class="logo">Siempre lista - Blog
+            <a class="navbar-brand" href="#espacio"></a>
+        </div>
+
+        <div class="navFooter">
+            <ul>
+                <li class= "navItemFooter"> <a class= "navLinkFooter" href="#espacio">¿Quien soy?</a></li>
+                <li class= "navItemFooter"> <a class= "navLinkFooter" href="#contenido">Productos y Servicios</a></li>
+                <li class= "navItemFooter"> <a class= "navLinkFooter" href="#tiktok1">Contacto</a></li>
+            </ul>
+        </div> 
+        
+        <div class="redes">
+            <a href="www.youtube.com"><i class="fa-brands fa-youtube"></i></a> 
+            <a href="www.instagram.com"><i class="fa-brands fa-instagram"></i></a>
+            <a href="www.facebook.com"><i class="fa-brands fa-facebook"></i></a>
+            <a href="www.whatsappweb.com"><i class="fa-brands fa-whatsapp"></i></a>
+        </div> 
+    </footer>
+
+        
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 
@@ -111,8 +190,11 @@
     <script src="./funciones.js"></script>
     <script src="./articulos.js"></script>
     <script src="./paginaPrincipal.js"></script>
+    <script src="./fetch.js"></script>
+
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     
 
     

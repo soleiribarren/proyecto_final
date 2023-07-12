@@ -1,80 +1,3 @@
-// function cargarCarritoLS() {
-//     return JSON.parse(localStorage.getItem("carrito")) || [];
-//   }
-  
-
-  
-//   //Esta funcion sirve para guardar el producto seleccionado en la LS
-//   //No hace falta guardar el array, puede ser solo el OBJETO
-//   function caracteristicasArticulos(id) {
-//     //En la variable productos guardo TODOS los productos
-//     let productos = cargarProductosLS();
-//     let masCaracteristicas = productos.find(item => item.id == id);
-//     localStorage.setItem("masCaracteristicas", JSON.stringify(masCaracteristicas));
-//     //Redireccionar a la pagina pasada por parametro
-//     // location.href = "verproducto.html";
-//   }
-  
-//   function renderProducto() {
-//     let producto = JSON.parse(localStorage.getItem("masCaracteristicas"));
-//     let contenidoProducto = `<div class="col-md-4 offset-md-3">
-//     <img src="${producto.imgUrl}" class="img-fluid" alt="${producto.nombre}">
-//     </div>
-
-//     <div class="col-md-4">
-//         <p class="text-body-tertiary">${producto.categoria}</p>
-//         <h3 class="text-danger">${producto.nombre}</h3>
-//         <h4 class="text-primary">$${producto.precio}</h4>
-//         <p class="my-5"><button class="btn btn-primary" onclick="agregarProducto(${producto.id})";>Agregar al carrito</button></p>
-//     </div>`;
-
-//     document.getElementById("contenidoProducto").innerHTML = contenidoProducto;
-// }
-
-// renderProducto();
-
-// function guardarProductosLS() {
-//     localStorage.setItem("productos", JSON.stringify(productos))
-// }
-  
-// guardarProductosLS();
-
-// function agregarProducto(id) {
-//     let carrito = cargarCarritoLS();
-//     let producto = buscarProducto();
-//     carrito.push(producto);
-//     guardarCarritoLS(carrito);  
-//   }
-  
-//   function buscarProducto(id) {
-//     let productos = cargarProductosLS();
-  
-//     return productos.find(p => p.id === id);
-// }
-
-// function agregarProducto(id) {
-//     let carrito = cargarCarritoLS();
-//     let producto = buscarProducto();
-//     carrito.push(producto);
-//     guardarCarritoLS(carrito);  
-// }
-  
-// function buscarProducto(id) {
-//     let productos = cargarProductosLS();
-  
-//     return productos.find(p => p.id === id);
-//   }  
-
-// function vaciarCarrito() {
-//     localStorage.removeItem("carrito");   
-// }
-
-// function cargarProductosLS() {
-//   return JSON.parse(localStorage.getItem("productos"));
-// }
-
-
-
 function guardarProductosLS() {
     localStorage.setItem("productos", JSON.stringify(productos));
 }
@@ -119,7 +42,7 @@ function agregarProducto(id) {
     renderBotonCarrito();
 }
 
-function eliminarProducto(id) { // Como eliminamos por ID, si tenemos dos productos iguales, elimina los dos
+function eliminarProducto(id) { 
     const carrito = cargarCarritoLS();
     let posicion = carrito.findIndex(item => item.id === id)
     
@@ -138,6 +61,7 @@ function vaciarCarrito() {
     localStorage.removeItem("carrito");
     renderBotonCarrito();
     renderProductos();
+    cartelCarrito();
 }
 
 function cantidadTotalProductos() {
@@ -155,7 +79,6 @@ function sumaTotalProductos() {
 function verProducto(id) {
     const producto = buscarProducto(id);
     localStorage.setItem("producto", JSON.stringify(producto));
-    //location.href = "ver-producto.html"; //Redireccionar a la página pasada por parámetro
 }
 
 function renderBotonCarrito() {
@@ -238,3 +161,45 @@ function filtrarProductosCheck() {
         renderizacionProductos();
     }
 }
+
+//Libreria - Sweet Alert
+
+let cartelCarrito = () => {
+    const swalWithBootstrapButtons = Swal.mixin({
+        customClass: {
+          confirmButton: 'btn btn-success',
+          cancelButton: 'btn btn-danger'
+        },
+        buttonsStyling: false
+      })
+      
+      swalWithBootstrapButtons.fire({
+        title: 'Estas seguro/a?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Si, borralo',
+        cancelButtonText: 'Cancelar',
+        reverseButtons: true
+      }).then((result) => {
+        if (result.isConfirmed) {
+          swalWithBootstrapButtons.fire(
+            'Borrado!',
+            'Tu carrito esta vacio.',
+            'success'
+          )
+        } else if (
+          result.dismiss === Swal.DismissReason.cancel
+        ) {
+          swalWithBootstrapButtons.fire(
+            'Cancelado',
+            'Tu carrito esta a salvo :)',
+            'error'
+          )
+        }
+      })
+}
+
+
+
+
+
