@@ -1,6 +1,6 @@
 let productos = [];
 
-fetch("../json/articulos.json")
+fetch(".../json/articulos.json")
     .then(response => response.json())
     .then(data => {
         productos = data;
@@ -38,7 +38,7 @@ function subtotal(id) {
 function renderBotonCarrito() {
     let botonCarrito = document.getElementById("botonCarrito");
     let contenido = `<button type="button" class="btn bg-light position-relative">
-    <img src="/Fotos/bag.svg" alt="CarritoFallido" width="32">
+    <img src="./Fotos/bag.svg" alt="CarritoFallido" width="32">
     <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
     ${cantidadTotalProductos()}
     </span>
