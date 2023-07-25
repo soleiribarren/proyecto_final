@@ -111,7 +111,7 @@ function filtrarProductos() {
     if (productos.length > 0) {
         productos.forEach(producto => {
         contenido += `<div class="col-md-3 mb-5">
-            <a href="verproducto.html" onClick="verProducto(${producto.id})" class="text-decoration-none">
+            <a href="./verproducto.html" onClick="verProducto(${producto.id})" class="text-decoration-none">
                 <div class="card w-100 text-center" style="width: 16rem">
                     <img src="${producto.imgUrl}" class="card-img-top" alt="${producto.nombre}">
                     <p class="card-text text-secondary">${producto.categoria}</p>
@@ -150,7 +150,7 @@ function filtrarProductosCheck() {
     if (productos.length > 0) {
         productos.forEach(producto => {
             contenido += `<div class="col-md-3 mb-5">
-            <a href="verproducto.html" onClick="verProducto(${producto.id})" class="text-decoration-none">
+            <a href="./verproducto.html" onClick="verProducto(${producto.id})" class="text-decoration-none">
                 <div class="card w-100 text-center" style="width: 16rem">
                     <img src="${producto.imgUrl}" class="card-img-top" alt="${producto.nombre}">
                     <p class="card-text text-secondary">${producto.categoria}</p>
