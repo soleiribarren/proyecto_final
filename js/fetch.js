@@ -1,6 +1,6 @@
 async function obtenerArticulos() {
     try {
-        let respuesta = await fetch("articulos.json");
+        let respuesta = await fetch("/jason/viajes.json");
         let json = await respuesta.json();
 
         let salida = "";

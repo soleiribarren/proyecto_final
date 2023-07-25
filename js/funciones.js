@@ -1,3 +1,12 @@
+let productos = [];
+
+fetch("./jason/articulos.json")
+    .then(response => response.json())
+    .then(data => {
+        productos = data;
+        guardarProductosLS(productos);
+    })
+
 function guardarProductosLS() {
     localStorage.setItem("productos", JSON.stringify(productos));
 }
@@ -24,6 +33,17 @@ function subtotal(id) {
     let carrito = cargarCarritoLS();
 
     return carrito.some(item => item.id === id)
+}
+
+function renderBotonCarrito() {
+    let botonCarrito = document.getElementById("botonCarrito");
+    let contenido = `<button type="button" class="btn bg-light position-relative">
+    <img src="/Fotos/bag.svg" alt="CarritoFallido" width="32">
+    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+    ${cantidadTotalProductos()}
+    </span>
+    </button>`;
+    botonCarrito.innerHTML = contenido;    
 }
 
 function agregarProducto(id) {
@@ -81,17 +101,6 @@ function verProducto(id) {
     localStorage.setItem("producto", JSON.stringify(producto));
 }
 
-function renderBotonCarrito() {
-    let botonCarrito = document.getElementById("botonCarrito");
-    let contenido = `<button type="button" class="btn bg-light position-relative">
-    <img src="Fotos/bag.svg" alt="CarritoFallido" width="32">
-    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-    ${cantidadTotalProductos()}
-    </span>
-    </button>`;
-    botonCarrito.innerHTML = contenido;    
-}
-
 function filtrarProductos() {
     let productos = cargarProductosLS();
     let textoBusqueda = document.getElementById("textoBusqueda").value;
@@ -120,7 +129,6 @@ function filtrarProductos() {
     
     document.getElementById("contenido").innerHTML = contenido;
 
-  
     renderBotonCarrito();
 
 }
@@ -167,36 +175,36 @@ function filtrarProductosCheck() {
 let cartelCarrito = () => {
     const swalWithBootstrapButtons = Swal.mixin({
         customClass: {
-          confirmButton: 'btn btn-success',
-          cancelButton: 'btn btn-danger'
-        },
+        confirmButton: 'btn btn-success',
+        cancelButton: 'btn btn-danger'
+    },
         buttonsStyling: false
-      })
-      
-      swalWithBootstrapButtons.fire({
+    })
+    
+    swalWithBootstrapButtons.fire({
         title: 'Estas seguro/a?',
         icon: 'warning',
         showCancelButton: true,
         confirmButtonText: 'Si, borralo',
         cancelButtonText: 'Cancelar',
         reverseButtons: true
-      }).then((result) => {
+    }).then((result) => {
         if (result.isConfirmed) {
-          swalWithBootstrapButtons.fire(
+        swalWithBootstrapButtons.fire(
             'Borrado!',
             'Tu carrito esta vacio.',
             'success'
-          )
+        )
         } else if (
-          result.dismiss === Swal.DismissReason.cancel
+        result.dismiss === Swal.DismissReason.cancel
         ) {
-          swalWithBootstrapButtons.fire(
+        swalWithBootstrapButtons.fire(
             'Cancelado',
             'Tu carrito esta a salvo :)',
             'error'
-          )
+        )
         }
-      })
+    })
 }
 
 
